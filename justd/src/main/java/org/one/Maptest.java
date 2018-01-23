@@ -23,5 +23,11 @@ public class Maptest {
         hm.put("geren",jsonObject);
         hm.put("22",js);
         System.out.println(jss);
+
+        People p = new People(10,"33");
+        JSONObject jsonObject1 = new JSONObject();
+        jsonObject1.put("1",p);
+        jsonObject1.put("aa","dds");
+        System.out.println(jsonObject1);
     }
 }
