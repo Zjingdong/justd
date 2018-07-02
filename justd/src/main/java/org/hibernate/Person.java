@@ -1,4 +1,4 @@
-package org.justd;
+package org.hibernate;
 
 import javax.persistence.*;
 

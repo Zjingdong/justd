@@ -1,4 +1,4 @@
-package org.one;
+package org.json;
 
 public class People {
     int age;

@@ -1,14 +1,7 @@
-package org.justd;
+package org.hibernate;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.annotations.SelectBeforeUpdate;
 import org.hibernate.cfg.Configuration;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
-import sun.security.krb5.Config;
 
 
 public class TestPerson {
