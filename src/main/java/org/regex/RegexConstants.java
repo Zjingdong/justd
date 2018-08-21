@@ -108,4 +108,9 @@ public class RegexConstants {
      * 正则：组织机构代码，8位数字或字母加上一个"-"再加一位数字或字母
      */
     public static final String REGEX_ORGANIZATION_CODE = "^[A-Za-z0-9]{8}-[A-Za-z0-9]{1}";
+
+    /**
+     * 正则：以[]开头结尾的json串
+     */
+    public static final String REGEX_JSON = "^\\[.*\\]$";
 }

@@ -1,5 +1,7 @@
 package org.regex;
 
+import jdk.nashorn.internal.runtime.regexp.joni.Regex;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -119,6 +121,15 @@ public class RegexUtils {
      */
     public static boolean isIP(final CharSequence input) {
         return isMatch(RegexConstants.REGEX_IP, input);
+    }
+
+    /**
+     * 判断是否为JSON，通过两边是否有大括号
+     * @param input
+     * @return
+     */
+    public static boolean isJSON(final String input) {
+        return isMatch(RegexConstants.REGEX_JSON,input);
     }
     /**
      * 验证6为数字验证码
