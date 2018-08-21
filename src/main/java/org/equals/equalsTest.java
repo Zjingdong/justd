@@ -1,6 +1,7 @@
 package org.equals;
 
-import com.sun.org.apache.bcel.internal.util.Objects;
+
+import java.util.Objects;
 
 public class equalsTest {
     public static void main(String[] args) {
