@@ -17,23 +17,24 @@ public class FileCut {
             int count = (int) (Math.ceil(f.length() / partSize)) + 1;
             System.out.println("块数" + count);
             try {
-                /**
-                 * 创建输入输出流对象*/
+                /* 创建输入输出流对象*/
                 InputStream inf = new FileInputStream(f);
                 System.out.println("输入流启动成功");
                 OutputStream[] outf = new FileOutputStream[count];
                 System.out.println("输出流启动成功：" + outf.length);
-                /**创建文件夹，存储各小块文件*/
+                //创建文件夹，存储各小块文件
+                System.out.println(f.getName());
+
                 int filePrefix = f.getName().lastIndexOf(".");
                 String str = f.getParent() + "\\" + f.getName().substring(0, filePrefix);/**目录路径*/
                 File dirfile = new File(str);
                 if (!dirfile.exists()) {
                     dirfile.mkdirs();
                 }
-                /**创建各小块文件并命名*/
+                //创建各小块文件并命名
                 File[] dir_f = new File[count];
                 System.out.println("数组创建成功：" + dir_f.length);
-                /**获取文件类型*/
+                //获取文件类型
                 String fName = f.getName();
                 String fPattern = fName.substring(fName.lastIndexOf("."));
                 System.out.println("文件类型获取成功：" + fPattern);
@@ -43,7 +44,7 @@ public class FileCut {
                     dir_f[j] = new File(newPath);
                     outf[j] = new FileOutputStream(dir_f[j]);
                 }
-                /**写入各块内容*/
+                //写入各块内容
                 int s, m = 0, n = FILE_SIZE;
                 byte[] buffer = new byte[n];
                 s = inf.read(buffer, 0, n);
@@ -85,9 +86,7 @@ public class FileCut {
             if (f.isFile() && f.length() > FILE_SIZE) {
                 /**调用单文件分割方法*/
                 splitCut(f, FILE_SIZE);
-            }
-            /**是目录*/
-            else if (f.isDirectory() && f.length() > FILE_SIZE) {
+            }else if (f.isDirectory() && f.length() > FILE_SIZE) { /**是目录*/
                 /**目录文件数组化*/
                 File[] dir = f.listFiles();
 
@@ -191,9 +190,18 @@ public class FileCut {
 
 
     public static void main(String[] args) {
-//        String path = "D:\\百度\\2017阿里技术年度精选上.pdf";//要切割的文件/目录路径
-//        divide(path);//切割
-        pack("D:\\百度\\2017阿里技术年度精选上");//组装（给出路径）
+        String path = "D:\\233\\455\\10m.ppt";//要切割的文件/目录路径
+        divide(path);
+        //packTest();
     }
+
+    static void divideTest(String path){
+        divide(path);//切割
+    }
+
+    static void packTest(){
+         pack("D:\\233\\455\\10m");//组装（给出路径）
+
+     }
 }
 
